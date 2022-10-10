@@ -18,6 +18,9 @@
                     Web
                 </th>
                 <th>
+                    Business Hours
+                </th>
+                <th>
                     Announcement
                 </th>
             </tr>
@@ -34,6 +37,15 @@
                     </td>
                     <td>
                         <a href="{{ branch.web }}" target="_blank" rel="noopener noreferrer">Web</a>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for businessHour in branch.businessHours %}
+                                <li>
+                                    {{ businessHour.dayOfWeek }}: {{ businessHour.businessHour }}
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </td>
                     <td>
                         {{ branch.announcement }}
