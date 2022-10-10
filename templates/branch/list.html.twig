@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>
+                    Internal ID
+                </th>
+                <th>
+                    Internal Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Web
+                </th>
+                <th>
+                    Announcement
+                </th>
+            </tr>
+            {% for branch in branches %}
+                <tr>
+                    <td>
+                        {{ branch.internalId }}
+                    </td>
+                    <td>
+                        {{ branch.internalName }}
+                    </td>
+                    <td>
+                        {{ branch.address }}
+                    </td>
+                    <td>
+                        <a href="{{ branch.web }}" target="_blank" rel="noopener noreferrer">Web</a>
+                    </td>
+                    <td>
+                        {{ branch.announcement }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
